@@ -1,0 +1,16 @@
+@Tutorials(name: "Swift入門シリーズ") {
+    @Intro(title: "ようこそSwiftの世界へ") {
+        このシリーズでは、Swiftを使ってiOSアプリを作るための基本を学んでいきます。
+        
+        @Image(source: "swift_intro.png", alt: "SwiftのロゴとXcodeの画面")
+    }
+    
+    @Chapter(name: "はじめてのアプリ") {
+        Swiftで最初のiOSアプリを作りましょう。
+        
+        @Image(source: "chapter1.png", alt: "Hello Worldアプリのイメージ")
+        
+        @TutorialReference(tutorial: "doc:Tutorial_1")
+        @TutorialReference(tutorial: "doc:Tutorial_2")
+    }
+}

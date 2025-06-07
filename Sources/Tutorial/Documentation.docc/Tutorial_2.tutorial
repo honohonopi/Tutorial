@@ -1,0 +1,115 @@
+@Tutorial(time: 15) {
+    @Intro(title: "SwiftUIの基本を学ぼう") {
+        このチュートリアルでは、SwiftUIの基礎的な構文やビューの使い方をクイズ形式で確認していきます。
+
+        @Image(source: "swiftui_intro.png", alt: "SwiftUIのコード画面")
+    }
+
+    @Section(title: "ビューの配置と状態管理") {
+        @ContentAndMedia {
+            SwiftUIでは、`VStack` や `HStack` を使ってビューを並べ、`@State` を使って状態を管理します。
+
+            @Image(source: "vstack_state.png", alt: "VStackと@Stateの例")
+        }
+
+        @Steps {
+            @Step {
+                まずはビューを縦に並べるにはどうするか考えてみましょう。
+
+                @Image(source: "vstack_example.png", alt: "縦に並んだビュー")
+            }
+
+            @Step {
+                次に、ボタンが押されたときに表示内容が変わるように状態を使ってみましょう。
+
+                @Code(name: "Stateの使用例", file: "StateExample.swift")
+            }
+        }
+    }
+
+    @Assessments {
+        @MultipleChoice {
+            ビューを縦に並べるには、どの要素を使いますか？
+
+            @Choice(isCorrect: false) {
+                `HStack`
+
+                @Justification(reaction: "惜しい！") {
+                    `HStack` は横に並べる場合に使います。
+                }
+            }
+
+            @Choice(isCorrect: true) {
+                `VStack`
+
+                @Justification(reaction: "正解！") {
+                    `VStack` はビューを縦に配置するための要素です。
+                }
+            }
+
+            @Choice(isCorrect: false) {
+                `ZStack`
+
+                @Justification(reaction: "違います") {
+                    `ZStack` はビューを重ねるために使います。
+                }
+            }
+        }
+
+        @MultipleChoice {
+            ボタンが押されたときにテキストを変えるには、どの構文を使いますか？
+
+            @Choice(isCorrect: true) {
+                `@State`で定義した変数を変更する
+
+                @Justification(reaction: "その通り！") {
+                    `@State` 変数はSwiftUIで状態の変化をトリガーします。
+                }
+            }
+
+            @Choice(isCorrect: false) {
+                `let`で定義した定数を変更する
+
+                @Justification(reaction: "残念！") {
+                    `let` は定数なので値の変更はできません。
+                }
+            }
+
+            @Choice(isCorrect: false) {
+                `Text`ビューの文字を直接書き換える
+
+                @Justification(reaction: "ちょっと違います") {
+                    `Text`ビューは表示専用なので、直接書き換えることはできません。
+                }
+            }
+        }
+
+        @MultipleChoice {
+            ボタンを作成したい場合、正しい構文はどれですか？
+
+            @Choice(isCorrect: false) {
+                `Label("押す", action: {})`
+
+                @Justification(reaction: "それは`Button`ではありません") {
+                    `Label` はアイコンと文字のラベル用です。
+                }
+            }
+
+            @Choice(isCorrect: true) {
+                `Button("押す") { /* 処理 */ }`
+
+                @Justification(reaction: "正解！") {
+                    `Button` はユーザーのタップに反応するビューです。
+                }
+            }
+
+            @Choice(isCorrect: false) {
+                `Text("押す")`
+
+                @Justification(reaction: "それはボタンではありません") {
+                    `Text` は文字の表示だけで、タップには反応しません。
+                }
+            }
+        }
+    }
+}

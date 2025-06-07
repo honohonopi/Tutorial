@@ -1,0 +1,115 @@
+@Tutorial(time: 10) {
+    @Intro(title: "Hello Worldアプリを作ろう") {
+        初めてのSwiftアプリとして、"Hello World" を表示する簡単なアプリを作成します。
+        
+        @Image(source: "helloworld.png", alt: "Hello Worldアプリの画面イメージ")
+    }
+    
+    @Section(title: "プロジェクトの作成") {
+        @ContentAndMedia {
+            Xcodeを使って新しいSwiftアプリのプロジェクトを作成します。
+            
+            @Image(source: "create_project.png", alt: "Xcodeで新規プロジェクトを作成する画面")
+        }
+        
+        @Steps {
+            @Step {
+                Xcodeを起動して「Create a new Xcode project」を選択します。
+                
+                @Image(source: "step1.png", alt: "Xcode起動画面")
+            }
+            
+            @Step {
+                Appテンプレートを選択し、必要な情報を入力してプロジェクトを作成します。
+                
+                @Code(name: "プロジェクト作成", file: "CreateProject.swift")
+            }
+        }
+    }
+
+    @Assessments {
+        @MultipleChoice {
+            どのSwift構文を使えば、ボタンが押されたときに画面上のテキストが変化しますか？
+
+            @Choice(isCorrect: false) {
+                `let`で定義した変数を使う。
+
+                @Justification(reaction: "残念！") {
+                    `let`は定数なので値を変えることはできません。
+                }
+            }
+
+            @Choice(isCorrect: true) {
+                `@State`付きの変数を使う。
+
+                @Justification(reaction: "正解です！") {
+                    `@State`はSwiftUIでビューの状態を管理するために使います。
+                }
+            }
+
+            @Choice(isCorrect: false) {
+                `Text`ビューの中に直接文字列を書く。
+
+                @Justification(reaction: "惜しい！") {
+                    `Text`は表示するだけで、状態に応じて動的に変化はしません。
+                }
+            }
+        }
+
+        @MultipleChoice {
+            SwiftUIでビューを縦に並べたいとき、どのレイアウトを使いますか？
+
+            @Choice(isCorrect: true) {
+                `VStack`
+
+                @Justification(reaction: "その通り！") {
+                    `VStack` はビューを垂直に並べるためのコンテナです。
+                }
+            }
+
+            @Choice(isCorrect: false) {
+                `HStack`
+
+                @Justification(reaction: "惜しい！") {
+                    `HStack` は水平方向に並べるためのものです。
+                }
+            }
+
+            @Choice(isCorrect: false) {
+                `ZStack`
+
+                @Justification(reaction: "違います") {
+                    `ZStack` はビューを重ねるときに使います。
+                }
+            }
+        }
+
+        @MultipleChoice {
+            SwiftUIでボタンを作る正しい構文はどれですか？
+
+            @Choice(isCorrect: true) {
+                `Button("押す") { /* 処理 */ }`
+
+                @Justification(reaction: "正解！") {
+                    `Button` を使うと、ユーザーのタップに応じた処理を記述できます。
+                }
+            }
+
+            @Choice(isCorrect: false) {
+                `Label("押す", action: {})`
+
+                @Justification(reaction: "それはラベルです") {
+                    `Label` はボタンではなく、テキスト＋アイコンを表示するためのビューです。
+                }
+            }
+
+            @Choice(isCorrect: false) {
+                `Text("押す")`
+
+                @Justification(reaction: "違います") {
+                    `Text` は表示専用のビューで、タップなどのインタラクションはできません。
+                }
+            }
+        }
+    }
+}
