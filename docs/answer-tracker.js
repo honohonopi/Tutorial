@@ -14,6 +14,7 @@ document.addEventListener("click", function (event) {
 
   // 選択された選択肢を取得
   const selectedChoice = quizEl.querySelector("label.choice.active");
+  console.log("selectedChoice:",selectedChoice);
   if (!selectedChoice) {
     console.warn("❌ 選択肢が選ばれていません");
     return;
