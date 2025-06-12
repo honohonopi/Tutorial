@@ -23,7 +23,7 @@ document.addEventListener("click", function (event) {
   const question = quizEl.querySelector(".title.content > p")?.innerText.trim() ?? "Unknown question";
 
   // 回答内容を取得（改行などをまとめて1行に）
-  const answer = quizEl.querySelector(".question.content > p")?.innerText.trim() ?? "Unknown question";
+  const answer = quizEl.querySelector(".question.content")?.innerText.trim() ?? "Unknown answer";
 
   // 正誤をクラスで判定
   const correct =
