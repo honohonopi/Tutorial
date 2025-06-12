@@ -14,7 +14,6 @@ document.addEventListener("click", function (event) {
 
   // 選択された選択肢を取得
   const selectedChoice = quizEl.querySelector("label.choice.active");
-  console.log("selectedChoice:",selectedChoice);
   if (!selectedChoice) {
     console.warn("❌ 選択肢が選ばれていません");
     return;
@@ -24,7 +23,7 @@ document.addEventListener("click", function (event) {
   const question = quizEl.querySelector(".title.content > p")?.innerText.trim() ?? "Unknown question";
 
   // 回答内容を取得（改行などをまとめて1行に）
-  const answer = quizEl.querySelector(".question.content")?.innerText.trim() ?? "Unknown answer";
+  const answer = selectedChoice.innerText.trim().replace(/\s+/g, " ");
 
   // 正誤をクラスで判定
   const correct =
