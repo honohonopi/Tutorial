@@ -20,10 +20,10 @@ document.addEventListener("click", function (event) {
   }
 
   // 問題文を取得
-  const question = quizEl.querySelector(".question.content > p")?.innerText.trim() ?? "Unknown question";
+  const question = quizEl.querySelector(".title.content > p")?.innerText.trim() ?? "Unknown question";
 
   // 回答内容を取得（改行などをまとめて1行に）
-  const answer = selectedChoice.innerText.trim().replace(/\s+/g, " ");
+  const answer = quizEl.querySelector(".question.content > p")?.innerText.trim() ?? "Unknown question";
 
   // 正誤をクラスで判定
   const correct =
