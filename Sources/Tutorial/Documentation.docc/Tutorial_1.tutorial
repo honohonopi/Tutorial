@@ -24,6 +24,11 @@
                 
                 @Code(name: "プロジェクト作成", file: "CreateProject.swift")
             }
+            @Step {
+                次のような画面が表示されたら準備は完了だよ！ 次のチャプターから実際にカウントアプリを作っていこう！！
+                
+                @Code(name: "プロジェクト作成", file: "CreateProject.swift")
+            }
         }
     }
 
